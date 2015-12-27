@@ -4,7 +4,11 @@
 
 名称 : すぱーダ（SPADA）  
 バージョン : Ver. 1.0.0.0 ( Dec. 27, 2015 )  
- 
+  
+種別 : .NET クラスライブラリ  
+ターゲットバージョン : .NET Framework 4.0  
+ターゲットでの必要なランタイム : .NET Framework 4.0以上
+  
 作成者 : 智中 ニア（ [@nia_tn1012](https://twitter.com/nia_tn1012/) ）  
 ライセンス : MIT Licence  
 ホームページ / GitHub  
