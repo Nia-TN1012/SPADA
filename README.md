@@ -123,9 +123,6 @@ using Chronoir_net.SPADA;
 
 class Program {
 
-	// すぱこーRSSフィードのURLです。
-	static string url = ;
-
 	static void Main( string[] args ) {
 		try {
 			// すぱーダで、すぱこーRSSフィードの読み込みます。
