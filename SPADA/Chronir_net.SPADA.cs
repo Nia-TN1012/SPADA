@@ -21,8 +21,8 @@
 *	@par 連絡先 Contact
 *	@@nia_tn1012（ https://twitter.com/nia_tn1012/ ）
 *	@par ホームページ Homepage
-*	http://chronoir.net/
-*	https://github.com/Nia-TN1012/SPADA
+*	- http://chronoir.net/
+*	- https://github.com/Nia-TN1012/SPADA
 *	@par リリースノート Release note
 *	- 2015/12/27 Ver. 1.00
 *		- CNR-00000 : 初版リリース
