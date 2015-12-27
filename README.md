@@ -13,6 +13,7 @@
 ライセンス : MIT Licence  
 ホームページ / GitHub  
 　http://chronoir.net  
+　http://chronoir.net/spada  
 　https://github.com/Nia-TN1012/SPADA
 
 ---
