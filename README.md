@@ -11,7 +11,7 @@
   
 作成者 : 智中 ニア（ [@nia_tn1012](https://twitter.com/nia_tn1012/) ）  
 ライセンス : MIT Licence  
-ホームページ / GitHub  
+ホームページ / ライブラリのページ / GitHub  
 　http://chronoir.net  
 　http://chronoir.net/spada  
 　https://github.com/Nia-TN1012/SPADA
@@ -29,6 +29,9 @@
 **Chronir_net.SPADA.dll**をアセンブリ参照に追加するか、**Chronir_net.SPADA.cs**をプロジェクトに追加します。
 
 ##◆ 使用方法
+
+ライブラリのドキュメントはこちらです。  
+http://chronoir.net/wp-content/uploads/contents/documents/libraries/SPADA
 
 すぱーダは すぱこーRSSフィードを読み込む`SpacoRSSReader`クラスと
 すぱこーの各話データを格納する`SpacoRSSItem`クラスの2つで構成されています。
