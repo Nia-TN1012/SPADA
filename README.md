@@ -11,10 +11,10 @@
   
 作成者 : 智中 ニア（ [@nia_tn1012](https://twitter.com/nia_tn1012/) ）  
 ライセンス : MIT Licence  
-ホームページ / ライブラリのページ / GitHub  
-　http://chronoir.net  
-　http://chronoir.net/spada  
-　https://github.com/Nia-TN1012/SPADA
+リンク  
+　http://chronoir.net （ホームページ）  
+　http://chronoir.net/spada （ライブラリのページ）  
+　https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）
 
 ---
 
@@ -24,14 +24,16 @@
 すぱーダ（SPADA）は、プログラミング生放送のすぱこーRSSフィード
 （ http://pronama.azurewebsites.net/spaco-feed/ ）を簡単に読み込むことができるライブラリです。
 
-##◆ インストール方法
+##◆ ダウンロードとインストール方法
+
+以下のリンクからzipファイルをダウンロードし、解凍します。  
+[Chronoir_net.SPADA_1.0.0.0.zip](http://chronoir.net/wp-content/uploads/Apps/Libraries/Chronoir_net.SPADA_1.0.0.0.zip)  
 
 **Chronir_net.SPADA.dll**をアセンブリ参照に追加するか、**Chronir_net.SPADA.cs**をプロジェクトに追加します。
 
 ##◆ 使用方法
 
-ライブラリのドキュメントはこちらです。  
-http://chronoir.net/wp-content/uploads/contents/documents/libraries/SPADA
+ライブラリのドキュメントはこちらです -> [SPADA: Main Page](http://chronoir.net/wp-content/uploads/contents/documents/libraries/SPADA)  
 
 すぱーダは すぱこーRSSフィードを読み込む`SpacoRSSReader`クラスと
 すぱこーの各話データを格納する`SpacoRSSItem`クラスの2つで構成されています。
