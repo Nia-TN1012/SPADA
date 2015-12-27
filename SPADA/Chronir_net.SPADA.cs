@@ -13,9 +13,9 @@
 *	@par コピーライト Copyright
 *	Copyright (C) 2015 Chronoir.net
 *	@par 作成日
-*	2015/12/26
+*	2015/12/27
 *	@par 最終更新日
-*	2015/12/26
+*	2015/12/27
 *	@par ライセンス Licence
 *	MIT Licence
 *	@par 連絡先 Contact
@@ -23,7 +23,7 @@
 *	@par ホームページ Homepage
 *	http://chronoir.net/
 *	@par リリースノート Release note
-*	- 2015/12/26 Ver. 1.00
+*	- 2015/12/27 Ver. 1.00
 *		- CNR-00000 : 初版リリース
 */
 #endregion
