@@ -1,6 +1,6 @@
 ﻿#region バージョン情報
 /**
-*	@file SPADA.cs
+*	@file
 *	@brief すぱこーRSSリーダー（すぱーダ（SPADA））。
 *	
 *	すぱーダ（SPADA）は、プログラミング生放送のすぱこーRSSフィード
