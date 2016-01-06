@@ -7,7 +7,7 @@
 *	（ http://pronama.azurewebsites.net/spaco-feed/ ）を簡単に読み込むことができるライブラリです。
 *
 *	@par バージョン Version
-*	1.00
+*	1.0.0
 *	@par 作成者 Author
 *	智中ニア（Nia Tomonaka）
 *	@par コピーライト Copyright
@@ -25,7 +25,7 @@
 *	- http://chronoir.net/spada （すぱーダのページ）
 *	- https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）
 *	@par リリースノート Release note
-*	- 2015/12/27 Ver. 1.00
+*	- 2015/12/27 Ver. 1.0.0
 *		- CNR-00000 : 初版リリース
 */
 #endregion
