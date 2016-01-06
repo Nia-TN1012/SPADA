@@ -3,7 +3,7 @@
 ---
 
 名称 : すぱーダ（SPADA）  
-バージョン : Ver. 1.0 ( Dec. 27, 2015 )  
+バージョン : Ver. 1.0.0 ( Dec. 27, 2015 )  
   
 種別 : .NET クラスライブラリ  
 ターゲットバージョン : .NET Framework 4.0  
@@ -15,6 +15,7 @@
 　http://chronoir.net （ホームページ）  
 　http://chronoir.net/spada （ライブラリのページ）  
 　https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）
+　https://www.nuget.org/packages/Chronir_net.SPADA/ （NuGet Gallery）
 
 ---
 
@@ -171,6 +172,6 @@ class Program {
 
 ##◆ リリースノート
 
-* Ver. 1.0.0.0 : 2015/12/27  
+* Ver. 1.0.0 : 2015/12/27  
 　 - CNR-00000 : 初版リリース
 

@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle( "すぱーダ" )]
-[assembly: AssemblyDescription( "すぱこーRSSリーダー" )]
+[assembly: AssemblyDescription( "すぱこーRSSリーダーライブラリ" )]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany( "Chronoir.net" )]
 [assembly: AssemblyProduct("SPADA")]
-[assembly: AssemblyCopyright( "Copyright ©  2015 Chronoir.net" )]
+[assembly: AssemblyCopyright( "Copyright © 2014-2016 Chronoir.net" )]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
