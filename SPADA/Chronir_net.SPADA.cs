@@ -24,6 +24,7 @@
 *	- http://chronoir.net/ (ホームページ)
 *	- http://chronoir.net/spada （すぱーダのページ）
 *	- https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）
+*	- https://www.nuget.org/packages/Chronir_net.SPADA/ （NuGet Gallery）
 *	@par リリースノート Release note
 *	- 2015/12/27 Ver. 1.0.0
 *		- CNR-00000 : 初版リリース

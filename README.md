@@ -14,7 +14,7 @@
 リンク  
 　http://chronoir.net （ホームページ）  
 　http://chronoir.net/spada （ライブラリのページ）  
-　https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）
+　https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）  
 　https://www.nuget.org/packages/Chronir_net.SPADA/ （NuGet Gallery）
 
 ---
@@ -28,7 +28,7 @@
 ##◆ ダウンロードとインストール方法
 
 以下のリンクからzipファイルをダウンロードし、解凍します。  
-[Chronoir_net.SPADA_1.0.0.0.zip](http://chronoir.net/wp-content/uploads/Apps/Libraries/Chronoir_net.SPADA_1.0.0.0.zip)  
+[Chronoir_net.SPADA.zip](http://chronoir.net/wp-content/uploads/Apps/Libraries/Chronoir_net.SPADA.zip)  
 
 **Chronir_net.SPADA.dll**をアセンブリ参照に追加するか、**Chronir_net.SPADA.cs**をプロジェクトに追加します。
 
