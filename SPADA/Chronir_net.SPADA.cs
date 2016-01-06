@@ -11,7 +11,7 @@
 *	@par 作成者 Author
 *	智中ニア（Nia Tomonaka）
 *	@par コピーライト Copyright
-*	Copyright (C) 2015 Chronoir.net
+*	Copyright (C) 2014-2016 Chronoir.net
 *	@par 作成日
 *	2015/12/27
 *	@par 最終更新日
