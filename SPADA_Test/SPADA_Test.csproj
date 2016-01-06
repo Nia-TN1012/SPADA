@@ -35,8 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Chronir_net.SPADA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=376e82b456766d72, processorArchitecture=MSIL">
-      <HintPath>..\packages\Chronir_net.SPADA.1.0.0.0\lib\net40\Chronir_net.SPADA.dll</HintPath>
+    <Reference Include="Chronir_net.SPADA, Version=1.0.0.1, Culture=neutral, PublicKeyToken=376e82b456766d72, processorArchitecture=MSIL">
+      <HintPath>..\packages\Chronir_net.SPADA.1.0.0.1\lib\net40\Chronir_net.SPADA.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
