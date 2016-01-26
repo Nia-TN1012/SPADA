@@ -1,0 +1,124 @@
+﻿<Page
+    x:Class="UniSPADA_Test.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UniSPADA_Test"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+
+	<Page.Resources>
+		<local:DateTimeStringConverter x:Key="DateTimeStringConverterKey"/>
+		<local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverterKey"/>
+	</Page.Resources>
+
+	<Page.DataContext>
+		<local:RSSViewModel x:Name="rssViewModel"
+							Url="http://pronama-api.azurewebsites.net/feed/spaco?count=20"
+							GetRSSCompleted="rssViewModel_GetRSSCompleted"/>
+	</Page.DataContext>
+
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="140"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<Image Grid.Column="0" Source="{Binding BannerURL}" Margin="5"/>
+			
+			<StackPanel Grid.Column="1">
+				<TextBlock Text="{Binding Title}"
+						   FontSize="{ThemeResource ListViewHeaderItemThemeFontSize}"
+						   Foreground="Lime" Padding="10, 5"
+						   TextWrapping="Wrap"/>
+				<TextBlock Text="{Binding Description}"
+						   FontSize="{ThemeResource ContentControlFontSize}"
+						   Foreground="White" Padding="10, 5"
+						   TextWrapping="Wrap"/>
+				<TextBlock Text="{Binding LastUpdatedTime, Converter={StaticResource DateTimeStringConverterKey}, ConverterParameter=yyyy年MM月dd日 HH:mm:ss, ConverterLanguage=ja-JP}"
+						   FontSize="{ThemeResource ContentControlFontSize}"
+						   Foreground="Yellow" Padding="10, 5"/>
+			</StackPanel>
+		</Grid>
+
+		<Rectangle Grid.Row="1"
+				   Height="1" Margin="10, 0"
+				   Fill="{ThemeResource ApplicationHeaderForegroundThemeBrush}" />
+
+		<Grid Grid.Row="2">
+			<ListBox x:Name="RSSListBox"
+					 ItemsSource="{Binding Items}"
+					 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+					 Background="Black"
+					 DoubleTapped="RSSListBox_DoubleTapped">
+				<ListBox.ItemContainerTransitions>
+					<TransitionCollection>
+						<AddDeleteThemeTransition/>
+						<ContentThemeTransition/>
+						<ReorderThemeTransition/>
+						<EntranceThemeTransition IsStaggeringEnabled="False"/>
+					</TransitionCollection>
+				</ListBox.ItemContainerTransitions>
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="140"/>
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
+
+							<Image Grid.Column="0" Source="{Binding Thumbnail}" Margin="5"/>
+
+							<StackPanel Grid.Column="1">
+								<TextBlock Text="{Binding Item.Title}"
+										   FontSize="{ThemeResource ListViewHeaderItemThemeFontSize}"
+										   TextWrapping="Wrap" Foreground="Lime" Padding="5,3,5,1"/>
+								<TextBlock Text="{Binding Item.Author}"
+										   FontSize="{ThemeResource ContentControlFontSize}"
+										   TextWrapping="Wrap" Foreground="White" Padding="5,1,5,3"/>
+								<TextBlock Text="{Binding Item.PubDate, Converter={StaticResource DateTimeStringConverterKey}, ConverterParameter=yyyy年MM月dd日 HH:mm:ss, ConverterLanguage=ja-JP}"
+										   FontSize="{ThemeResource ContentControlFontSize}"
+										   TextWrapping="Wrap" Foreground="Yellow" Padding="5,1,5,2"/>
+							</StackPanel>
+						</Grid>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+
+			<ProgressRing Margin="0" Height="100" Width="100"
+						  Foreground="LawnGreen"
+						  IsActive="{Binding IsProgress}"
+						  Visibility="{Binding IsActive, Converter={StaticResource BoolToVisibilityConverterKey}, RelativeSource={RelativeSource Self}}">
+				<ProgressRing.Transitions>
+					<TransitionCollection>
+						<AddDeleteThemeTransition/>
+					</TransitionCollection>
+				</ProgressRing.Transitions>
+			</ProgressRing>
+
+		</Grid>
+
+		<Grid Grid.Row="3">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+
+			<TextBox Grid.Column="0"
+					 Text="{Binding Url, Mode=TwoWay}"/>
+			<Button Grid.Column="1" HorizontalAlignment="Right"
+					Content="更新" Command="{Binding GetRSS}"/>
+			<Button Grid.Column="2" HorizontalAlignment="Right"
+					Content="中止" Command="{Binding CancelGetRSS}"/>
+		</Grid>
+	</Grid>
+</Page>
