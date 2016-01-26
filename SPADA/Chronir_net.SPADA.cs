@@ -6,8 +6,10 @@
 *	すぱーダ（SPADA）は、プログラミング生放送のすぱこーRSSフィード
 *	（ http://pronama.azurewebsites.net/spaco-feed/ ）を簡単に読み込むことができるライブラリです。
 *
+*	@対応プラットフォーム
+*	- .NET Framework 4.0 以上
 *	@par バージョン Version
-*	1.0.0
+*	1.0.5
 *	@par 作成者 Author
 *	智中ニア（Nia Tomonaka）
 *	@par コピーライト Copyright
@@ -15,7 +17,7 @@
 *	@par 作成日
 *	2015/12/27
 *	@par 最終更新日
-*	2015/12/27
+*	2016/01/26
 *	@par ライセンス Licence
 *	MIT Licence
 *	@par 連絡先 Contact
@@ -28,6 +30,8 @@
 *	@par リリースノート Release note
 *	- 2015/12/27 Ver. 1.0.0
 *		- CNR-00000 : 初版リリース
+*	- 2016/01/26 Ver. 1.0.5
+*		- CNR-00001 : SpacoRSSReader.Load( XmlReader )メソッドにおいて、読み込み後にXmlReaderのカーソル位置を最後まで移動する処理を廃止しました。
 */
 #endregion
 
@@ -35,7 +39,6 @@ using System;
 using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Linq;
-
 
 namespace Chronoir_net {
 
@@ -100,6 +103,8 @@ namespace Chronoir_net {
 		/// </summary>
 		public class SpacoRSSReader {
 
+			#region チャンネル情報
+
 			/// <summary>
 			///		作品タイトルを取得します。
 			/// </summary>
@@ -125,6 +130,8 @@ namespace Chronoir_net {
 			/// </summary>
 			public string Author { get; private set; }
 
+			#endregion
+
 			/// <summary>
 			///		すぱこーの各話を格納します
 			/// </summary>
@@ -147,6 +154,8 @@ namespace Chronoir_net {
 			public SpacoRSSReader() {
 				items = new List<SpacoRSSItem>();
 			}
+
+			#region 同期読み込み
 
 			/// <summary>
 			///		指定したURLからすぱこーRSSフィードを読み込み、SpacoRSSReaderオブジェクトを生成します。
@@ -250,8 +259,6 @@ namespace Chronoir_net {
 						break;
 					}
 				}
-				// XmlReaderオブジェクトの現在位置を末尾に移動させます。
-				while( reader.Read() ) ;
 
 				return srr;
 			}
@@ -343,6 +350,9 @@ namespace Chronoir_net {
 
 				return sri;
 			}
+
+			#endregion
+
 		}
 	}
 }

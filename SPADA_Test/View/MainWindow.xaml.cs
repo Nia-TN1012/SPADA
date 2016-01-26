@@ -8,13 +8,15 @@ namespace SPADA_Test {
 	public partial class MainWindow : Window {
 		public MainWindow() {
 			InitializeComponent();
-			// RSSフィールドを取得するコマンドを実行します。
+			// RSSフィードを取得するコマンドを実行します。
 			rssViewModel.GetRSS.Execute( null );
 		}
 
-		// RSSフィールド取得後のイベントです。（ ViewModel側のハンドラーに設定します ）
+		// RSSフィード取得後のイベントです。（ ViewModel側のハンドラーに設定します ）
 		private void rssViewModel_GetRSSCompleted( object sender, TaskResultEventArgs e ) {
-			if( e.Result == TaskResult.Failed )
+			if( e.Result == TaskResult.Canceled )
+				MessageBox.Show( "RSSフィードの取得を中止しました。", "Info.", MessageBoxButton.OK, MessageBoxImage.Information );
+			else if( e.Result == TaskResult.Failed )
 				MessageBox.Show( "RSSフィードの取得中にエラーが発生しました。", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation );
 		}
 

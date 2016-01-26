@@ -72,12 +72,15 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <TextBox Grid.Column="0" Text="{Binding Url}"
 					 Background="Black" Foreground="White"/>
             <Button Grid.Column="1" HorizontalAlignment="Right"
-				Content="更新" Command="{Binding GetRSS}"/>
+					Content="更新" Command="{Binding GetRSS}"/>
+			<Button Grid.Column="2" HorizontalAlignment="Right"
+					Content="中止" Command="{Binding CancelGetRSS}"/>
         </Grid>
     </Grid>
 </Window>
