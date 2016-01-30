@@ -113,6 +113,9 @@
     <Compile Include="SpacoRSSClient.cs" />
     <EmbeddedResource Include="Properties\Chronoir_net.UniSPADA.rd.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="UniSPADA-Pronama.png" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
