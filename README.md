@@ -38,7 +38,7 @@ NuGet Gallery
 以下のリンクからzipファイルをダウンロードし、解凍します。  
 * [Chronoir_net.SPADA.zip](http://chronoir.net/wp-content/uploads/Apps/Libraries/Chronoir_net.SPADA.zip)
 
-DLLファイルをアセンブリ参照に追加するか、プロジェクトに追加します。
+DLLファイルをアセンブリ参照に追加するか、ソースファイルをプロジェクトに追加します。
 
 ##◆ 使用方法
 
