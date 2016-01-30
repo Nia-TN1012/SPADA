@@ -20,7 +20,7 @@
 *	@par ホームページ Homepage
 *	- http://chronoir.net/ (ホームページ)
 *	- http://chronoir.net/spada （すぱーダのページ）
-*	- https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）
+*	- https://github.com/Nia-TN1012/UniSPADA （GitHubのリポジトリ）
 *	@par リリースノート Release note
 *	- 2016/01/30 Ver. 1.0.0
 *		- CNR-00000 : 初版リリース
