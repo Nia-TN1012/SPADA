@@ -7,6 +7,7 @@
     <authors>Nia Tomonaka</authors>
     <owners>Nia Tomonaka</owners>
     <projectUrl>https://github.com/Nia-TN1012/SPADA</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/Nia-TN1012/SPADA/master/Chronoir_net.XSPADA/XSPADA-Pronama.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>プログラミング生放送のすぱこーRSSフィードを、簡単に読み込むことができるライブラリです。 （for Xamarin、Windows 8.x、Windows Phone 8.1、ASP.NET Core 5.0）</description>
     <releaseNotes>$version$ : 初版リリース</releaseNotes>

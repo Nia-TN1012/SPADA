@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:local="clr-namespace:XSPADA_Test;assembly=XSPADA_Test"
+             x:Class="XSPADA_Test.MainPage1">
+	<!--ContentPage.BindingContext>
+		<local:RSSViewModel x:Name="rssViewModel"
+							Url="http://pronama-api.azurewebsites.net/feed/spaco?count=5"/>
+	</ContentPage.BindingContext-->
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="140"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<Image Grid.Column="0" Source="{Binding BannerURL}"/>
+
+			<StackLayout Grid.Column="1">
+				<Label Text="{Binding Title}"
+					   FontSize="20"
+					   TextColor="Lime"
+					   LineBreakMode="CharacterWrap"/>
+				<Label Text="{Binding Description}"
+					   FontSize="16"
+					   TextColor="White"
+					   LineBreakMode="CharacterWrap"/>
+				<Label Text="{Binding LastUpdatedTime, StringFormat='{0:F}'}"
+					   FontSize="16"
+					   TextColor="Yellow"/>
+			</StackLayout>
+
+		</Grid>
+		
+		<BoxView Grid.Row="1" HeightRequest="1"/>
+
+		<Grid Grid.Row="2">
+			<ListView ItemsSource="{Binding Items}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ImageCell ImageSource="{Binding Thumbnail}"
+								   Text="{Binding Item.Title}"
+								   Detail="{Binding Item.PubDate, StringFormat='{0:F}'}"/>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</Grid>
+
+		<Grid Grid.Row="3">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+
+			<Entry Grid.Column="0" Text="{Binding Url}"/>
+			<Button Grid.Column="1"
+					Text="更新" Command="{Binding GetRSS}"/>
+			<Button Grid.Column="2"
+					Text="中止" Command="{Binding CancelGetRSS}"/>
+		</Grid>
+		
+	</Grid>
+</ContentPage>

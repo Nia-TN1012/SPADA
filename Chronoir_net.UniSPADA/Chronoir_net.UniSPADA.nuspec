@@ -7,8 +7,9 @@
     <authors>Nia Tomonaka</authors>
     <owners>Nia Tomonaka</owners>
     <projectUrl>https://github.com/Nia-TN1012/SPADA</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/Nia-TN1012/SPADA/master/Chronoir_net.UniSPADA/UniSPADA-Pronama.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>プログラミング生放送のすぱこーRSSフィードを、簡単に読み込むことができるライブラリです。（for ユニバーサルWindow） </description>
+    <description>プログラミング生放送のすぱこーRSSフィードを、簡単に読み込むことができるライブラリです。（for ユニバーサルWindows） </description>
     <releaseNotes>$version$ : 初版リリース</releaseNotes>
     <copyright>Copyright 2014-2016 Chronoir.net</copyright>
     <tags>C# すぱーダ SPADA すぱこー Spaco RSS ユニバーサルWindows UniversalWindows</tags>
