@@ -17,7 +17,7 @@
 *	@par 作成日
 *	2015/12/27
 *	@par 最終更新日
-*	2016/01/26
+*	2016/01/30
 *	@par ライセンス Licence
 *	MIT Licence
 *	@par 連絡先 Contact
@@ -30,8 +30,9 @@
 *	@par リリースノート Release note
 *	- 2015/12/27 Ver. 1.0.0
 *		- CNR-00000 : 初版リリース
-*	- 2016/01/26 Ver. 1.0.5
+*	- 2016/01/30 Ver. 1.0.5
 *		- CNR-00001 : SpacoRSSReader.Load( XmlReader )メソッドにおいて、読み込み後にXmlReaderのカーソル位置を最後まで移動する処理を廃止しました。
+*		- CNR-00002 : SpacoRSSReaderのチャンネル情報の値を外部から設定できるように変更しました。
 */
 #endregion
 
@@ -106,29 +107,29 @@ namespace Chronoir_net {
 			#region チャンネル情報
 
 			/// <summary>
-			///		作品タイトルを取得します。
+			///		作品タイトルを取得・設定します。
 			/// </summary>
 			public string Title { get; set; }
 			/// <summary>
-			///		リンクを取得します。
+			///		リンクを取得・設定します。
 			/// </summary>
-			public string Link { get; private set; }
+			public string Link { get; set; }
 			/// <summary>
-			///		作品の説明を取得します。
+			///		作品の説明を取得・設定します。
 			/// </summary>
-			public string Description { get; private set; }
+			public string Description { get; set; }
 			/// <summary>
-			///		最新話更新日を取得します。
+			///		最新話更新日を取得・設定します。
 			/// </summary>
-			public DateTime PubDate { get; private set; }
+			public DateTime PubDate { get; set; }
 			/// <summary>
-			///		バナー画像のURLを取得します。
+			///		バナー画像のURLを取得・設定します。
 			/// </summary>
-			public string BannerURL { get; private set; }
+			public string BannerURL { get; set; }
 			/// <summary>
-			///		作者名を取得します。
+			///		作者名を取得・設定します。
 			/// </summary>
-			public string Author { get; private set; }
+			public string Author { get; set; }
 
 			#endregion
 

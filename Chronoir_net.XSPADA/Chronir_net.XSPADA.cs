@@ -1,7 +1,7 @@
 ﻿#region バージョン情報
 /**
 *	@file
-*	@brief すぱこーRSSリーダー クロスプラットフォームEdition（エクすぱーダ（X-SPADA））。
+*	@brief すぱこーRSSリーダー クロスプラットフォーム（エクすぱーダ（X-SPADA））。
 *	
 *	すぱーダ（SPADA）は、プログラミング生放送のすぱこーRSSフィード
 *	（ http://pronama.azurewebsites.net/spaco-feed/ ）を簡単に読み込むことができるライブラリです。
@@ -20,9 +20,9 @@
 *	@par コピーライト Copyright
 *	Copyright (C) 2014-2016 Chronoir.net
 *	@par 作成日
-*	2016/01/26
+*	2016/01/30
 *	@par 最終更新日
-*	2016/01/26
+*	2016/01/30
 *	@par ライセンス Licence
 *	MIT Licence
 *	@par 連絡先 Contact
@@ -32,7 +32,7 @@
 *	- http://chronoir.net/spada （すぱーダのページ）
 *	- https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）
 *	@par リリースノート Release note
-*	- 2016/01/26 Ver. 1.0.0
+*	- 2016/01/30 Ver. 1.0.0
 *		- CNR-00000 : 初版リリース
 */
 #endregion
@@ -49,7 +49,6 @@ namespace Chronoir_net {
 	/// <summary>
 	///		すぱこーRSSフィードを取得するモジュール、
 	///		すぱこーRSSリーダー、略して「すぱーダ」（SPADA）です。
-	///		
 	///		エクすぱーダ（X-SPADA）は、すぱーダ（オリジナル）を
 	///		クロスプラットフォームに対応させたライブラリです。
 	///		・Windows（ デスクトップ / ウェブ / ストアアプリ / Phone 8.1 ）
@@ -117,29 +116,29 @@ namespace Chronoir_net {
 			#region チャンネル情報
 
 			/// <summary>
-			///		作品タイトルを取得します。
+			///		作品タイトルを取得・設定します。
 			/// </summary>
 			public string Title { get; set; }
 			/// <summary>
-			///		リンクを取得します。
+			///		リンクを取得・設定します。
 			/// </summary>
-			public string Link { get; private set; }
+			public string Link { get; set; }
 			/// <summary>
-			///		作品の説明を取得します。
+			///		作品の説明を取得・設定します。
 			/// </summary>
-			public string Description { get; private set; }
+			public string Description { get; set; }
 			/// <summary>
-			///		最新話更新日を取得します。
+			///		最新話更新日を取得・設定します。
 			/// </summary>
-			public DateTime PubDate { get; private set; }
+			public DateTime PubDate { get; set; }
 			/// <summary>
-			///		バナー画像のURLを取得します。
+			///		バナー画像のURLを取得・設定します。
 			/// </summary>
-			public string BannerURL { get; private set; }
+			public string BannerURL { get; set; }
 			/// <summary>
-			///		作者名を取得します。
+			///		作者名を取得・設定します。
 			/// </summary>
-			public string Author { get; private set; }
+			public string Author { get; set; }
 
 			#endregion
 
