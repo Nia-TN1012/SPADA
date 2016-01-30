@@ -42,7 +42,8 @@
 		<BoxView Grid.Row="1" HeightRequest="1"/>
 
 		<Grid Grid.Row="2">
-			<ListView ItemsSource="{Binding Items}">
+			<ListView x:Name="RSSListView"
+					  ItemsSource="{Binding Items}">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ImageCell ImageSource="{Binding Thumbnail}"
