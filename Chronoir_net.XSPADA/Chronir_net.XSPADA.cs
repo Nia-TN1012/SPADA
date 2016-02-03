@@ -14,7 +14,7 @@
 *	- Xamarin.Android
 *	- Xamarin.iOS（Classicも含む）
 *	@par バージョン Version
-*	1.0.0
+*	1.0.1
 *	@par 作成者 Author
 *	智中ニア（Nia Tomonaka）
 *	@par コピーライト Copyright
@@ -22,7 +22,7 @@
 *	@par 作成日
 *	2016/01/30
 *	@par 最終更新日
-*	2016/01/30
+*	2016/02/03
 *	@par ライセンス Licence
 *	MIT Licence
 *	@par 連絡先 Contact
@@ -30,8 +30,11 @@
 *	@par ホームページ Homepage
 *	- http://chronoir.net/ (ホームページ)
 *	- http://chronoir.net/spada （すぱーダのページ）
-*	- https://github.com/Nia-TN1012/XSPADA （GitHubのリポジトリ）
+*	- https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）
+*	- https://www.nuget.org/packages/Chronoir_net.XSPADA/ （NuGet Gallery）
 *	@par リリースノート Release note
+*	- 2016/02/03 Ver. 1.0.1
+*		- CNR-00001 : LoadAsync、GetXmlReaderAsyncメソッドにおいて、CancellationTokenにデフォルト引数（null）を設定しました。
 *	- 2016/01/30 Ver. 1.0.0
 *		- CNR-00000 : 初版リリース
 */
@@ -373,7 +376,7 @@ namespace Chronoir_net {
 			/// <returns>すぱこーRSSフィードのデータを格納した、SpacoRSSReaderオブジェクト</returns>
 			/// <exception cref="OperationCanceledException">読み込み中止を要求された時</exception>
 			/// <remarks>cancellationTokenがnullの場合、読み込みを中止することができません。</remarks>
-			public static Task<SpacoRSSReader> LoadAsync( string uri, CancellationToken? cancellationToken ) {
+			public static Task<SpacoRSSReader> LoadAsync( string uri, CancellationToken? cancellationToken = null ) {
 				SpacoRSSReader srr = new SpacoRSSReader();
 
 				// Linq to XMLですぱこーRSSフィードの読み込みます。
@@ -422,7 +425,7 @@ namespace Chronoir_net {
 			/// <returns>すぱこーRSSフィードのデータを格納した、SpacoRSSReaderオブジェクト</returns>
 			/// <exception cref="OperationCanceledException">読み込み中止を要求された時</exception>
 			/// <remarks>cancellationTokenがnullの場合、読み込みを中止することができません。</remarks>
-			public static async Task<SpacoRSSReader> LoadAsync( XmlReader reader, CancellationToken? cancellationToken ) {
+			public static async Task<SpacoRSSReader> LoadAsync( XmlReader reader, CancellationToken? cancellationToken = null ) {
 				SpacoRSSReader srr = new SpacoRSSReader();
 
 				reader.Read();
@@ -493,7 +496,7 @@ namespace Chronoir_net {
 			/// <exception cref="OperationCanceledException">読み込み中止を要求された時</exception>
 			/// <remarks>SpacoRSSReader.LoadAsync( XmlReader )から呼び出します。cancellationTokenがnullの場合、読み込みを中止することができません。</remarks>
 			/// <seealso cref="LoadAsync( XmlReader, CancellationToken? )"/>
-			private static Task<SpacoRSSItem> LoadItemAsync( XmlReader reader, CancellationToken? cancellationToken ) {
+			private static Task<SpacoRSSItem> LoadItemAsync( XmlReader reader, CancellationToken? cancellationToken = null ) {
 				SpacoRSSItem sri = new SpacoRSSItem();
 				reader.ReadStartElement( "item" );
 
