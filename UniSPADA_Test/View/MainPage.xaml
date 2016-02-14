@@ -14,7 +14,7 @@
 
 	<Page.DataContext>
 		<local:RSSViewModel x:Name="rssViewModel"
-							Url="http://pronama-api.azurewebsites.net/feed/spaco?count=20"
+							Url="http://pronama-api.azurewebsites.net/feed/spaco"
 							GetRSSCompleted="rssViewModel_GetRSSCompleted"/>
 	</Page.DataContext>
 

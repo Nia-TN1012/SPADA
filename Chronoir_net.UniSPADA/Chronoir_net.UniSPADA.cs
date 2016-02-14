@@ -9,7 +9,7 @@
 *	@対応プラットフォーム
 *	- ユニバーサルWindows（ Build 10240以上 ）
 *	@par バージョン Version
-*	1.0.1
+*	1.0.2
 *	@par 作成者 Author
 *	智中ニア（Nia Tomonaka）
 *	@par コピーライト Copyright
@@ -17,7 +17,7 @@
 *	@par 作成日
 *	2016/01/30
 *	@par 最終更新日
-*	2016/02/03
+*	2016/02/14
 *	@par ライセンス Licence
 *	MIT Licence
 *	@par 連絡先 Contact
@@ -28,6 +28,8 @@
 *	- https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）
 *	- https://www.nuget.org/packages/Chronoir_net.UniSPADA/ （NuGet Gallery）
 *	@par リリースノート Release note
+*	- 2016/02/14 Ver. 1.0.2
+*		- CNR-00002 : LoadAsyncから呼び出している、LoadItemAsyncをLoadItem（CancellationTokenを指定可能）に変更し、非同期処理を最適化しました。
 *	- 2016/02/03 Ver. 1.0.1
 *		- CNR-00001 : LoadAsync、GetXmlReaderAsyncメソッドにおいて、CancellationTokenにデフォルト引数（null）を設定しました。
 *	- 2016/01/30 Ver. 1.0.0
@@ -415,7 +417,7 @@ namespace Chronoir_net {
 			/// <returns>すぱこーRSSフィードのデータを格納した、SpacoRSSReaderオブジェクト</returns>
 			/// <exception cref="OperationCanceledException">読み込み中止を要求された時</exception>
 			/// <remarks>cancellationTokenがnullの場合、読み込みを中止することができません。</remarks>
-			public static async Task<SpacoRSSReader> LoadAsync( XmlReader reader, CancellationToken? cancellationToken = null ) {
+			public static Task<SpacoRSSReader> LoadAsync( XmlReader reader, CancellationToken? cancellationToken = null ) {
 				SpacoRSSReader srr = new SpacoRSSReader();
 				
 				reader.Read();
@@ -461,7 +463,7 @@ namespace Chronoir_net {
 								reader.ReadEndElement();
 								break;
 							case "item":
-								srr.items.Add( await LoadItemAsync( reader, cancellationToken ) );
+								srr.items.Add( LoadItem( reader, cancellationToken ) );
 								break;
 							default:
 								break;
@@ -474,7 +476,7 @@ namespace Chronoir_net {
 					}
 				}
 
-				return srr;
+				return Task.FromResult( srr );
 			}
 
 			/// <summary>
@@ -486,7 +488,7 @@ namespace Chronoir_net {
 			/// <exception cref="OperationCanceledException">読み込み中止を要求された時</exception>
 			/// <remarks>SpacoRSSReader.LoadAsync( XmlReader )から呼び出します。cancellationTokenがnullの場合、読み込みを中止することができません。</remarks>
 			/// <seealso cref="LoadAsync( XmlReader, CancellationToken? )"/>
-			private static Task<SpacoRSSItem> LoadItemAsync( XmlReader reader, CancellationToken? cancellationToken = null ) {
+			private static SpacoRSSItem LoadItem( XmlReader reader, CancellationToken? cancellationToken ) {
 				SpacoRSSItem sri = new SpacoRSSItem();
 				reader.ReadStartElement( "item" );
 
@@ -566,7 +568,7 @@ namespace Chronoir_net {
 					}
 				}
 
-				return Task.FromResult( sri );
+				return sri;
 			}
 
 			#endregion

@@ -11,7 +11,7 @@
     <licenseUrl>https://raw.githubusercontent.com/Nia-TN1012/SPADA/master/LICENCE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>プログラミング生放送のすぱこーRSSフィードを、簡単に読み込むことができるライブラリです。 （for .NET Framework 4.5、Xamarin、Windows 8.x、Windows Phone 8.1、ASP.NET Core 5.0）</description>
-    <releaseNotes>$version$ : LoadAsync、GetXmlReaderAsyncメソッドにおいて、CancellationTokenにデフォルト引数（null）を設定しました。</releaseNotes>
+    <releaseNotes>$version$ : 動作の最適化</releaseNotes>
     <copyright>Copyright 2014-2016 Chronoir.net</copyright>
     <tags>C# すぱーダ SPADA すぱこー Spaco RSS Xamarin</tags>
   </metadata>
