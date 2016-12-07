@@ -26,7 +26,7 @@
 *	- http://chronoir.net/ (ホームページ)
 *	- http://chronoir.net/spada （すぱーダのページ）
 *	- https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）
-*	- https://www.nuget.org/packages/Chronir_net.SPADA/ （NuGet Gallery）
+*	- https://www.nuget.org/packages/Chronoir_net.SPADA/ （NuGet Gallery）
 *	@par リリースノート Release note
 *	- 2016/12/08 Ver. 1.0.6
 *		- CNR-00003 : SpacoRSSItemクラスのコンストラクターを強化しました。
