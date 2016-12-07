@@ -7,8 +7,8 @@
     <ProjectGuid>{7BD029C4-596A-47DD-B8AE-D3B7AC905979}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Chronir_net.SPADA</RootNamespace>
-    <AssemblyName>Chronir_net.SPADA</AssemblyName>
+    <RootNamespace>Chronoir_net.SPADA</RootNamespace>
+    <AssemblyName>Chronoir_net.SPADA</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -30,7 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Chronir_net.SPADA.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\Chronoir_net.SPADA.xml</DocumentationFile>
     <RegisterForComInterop>false</RegisterForComInterop>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -53,7 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chronir_net.SPADA.cs" />
+    <Compile Include="Chronoir_net.SPADA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

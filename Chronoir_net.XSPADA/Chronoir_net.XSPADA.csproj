@@ -44,7 +44,7 @@
     <None Include="CN_SPADA.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chronir_net.XSPADA.cs" />
+    <Compile Include="Chronoir_net.XSPADA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpacoRSSClient.cs" />
   </ItemGroup>

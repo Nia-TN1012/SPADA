@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>すぱーダ（SPADA）</title>
+    <authors>Nia Tomonaka</authors>
+    <owners>Nia Tomonaka</owners>
+    <projectUrl>https://github.com/Nia-TN1012/SPADA</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/Nia-TN1012/SPADA/master/SPADA/SPADA-Pronama.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>プログラミング生放送のすぱこーRSSフィードを、簡単に読み込むことができるライブラリです。 </description>
+    <releaseNotes>$version$ : SpacoRSSItemクラスのコンストラクターを強化しました。</releaseNotes>
+    <copyright>Copyright 2014-2016 Chronoir.net</copyright>
+    <tags>C# すぱーダ SPADA すぱこー Spaco RSS</tags>
+  </metadata>
+  
+</package>

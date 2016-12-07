@@ -9,7 +9,7 @@
 *	@対応プラットフォーム
 *	- .NET Framework 4.0 以上
 *	@par バージョン Version
-*	1.0.5
+*	1.0.6
 *	@par 作成者 Author
 *	智中ニア（Nia Tomonaka）
 *	@par コピーライト Copyright
@@ -17,7 +17,7 @@
 *	@par 作成日
 *	2015/12/27
 *	@par 最終更新日
-*	2016/01/30
+*	2016/12/08
 *	@par ライセンス Licence
 *	MIT Licence
 *	@par 連絡先 Contact
@@ -28,11 +28,13 @@
 *	- https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）
 *	- https://www.nuget.org/packages/Chronir_net.SPADA/ （NuGet Gallery）
 *	@par リリースノート Release note
-*	- 2015/12/27 Ver. 1.0.0
-*		- CNR-00000 : 初版リリース
+*	- 2016/12/08 Ver. 1.0.6
+*		- CNR-00003 : SpacoRSSItemクラスのコンストラクターを強化しました。
 *	- 2016/01/30 Ver. 1.0.5
 *		- CNR-00001 : SpacoRSSReader.Load( XmlReader )メソッドにおいて、読み込み後にXmlReaderのカーソル位置を最後まで移動する処理を廃止しました。
 *		- CNR-00002 : SpacoRSSReaderのチャンネル情報の値を外部から設定できるように変更しました。
+*	- 2015/12/27 Ver. 1.0.0
+*		- CNR-00000 : 初版リリース
 */
 #endregion
 
@@ -81,7 +83,7 @@ namespace Chronoir_net {
 			/// </summary>
 			public DateTime ModifiedDate { get; set; }
 			/// <summary>
-			///		利用可能可能かどうかを取得・設定します。
+			///		利用可能かどうかを取得・設定します。
 			/// </summary>
 			/// <value>true : 利用可能 / false : 利用不可能</value>
 			public bool IsAvailable { get; set; }
@@ -97,6 +99,50 @@ namespace Chronoir_net {
 			///		IDを取得・設定します。
 			/// </summary>
 			public string ID { get; set; }
+
+			/// <summary>
+			///		指定したすぱこーRSSフィードの各要素の値から、<see cref="SpacoRSSItem"/>クラスの新しいインスタンスを生成します。
+			/// </summary>
+			/// <param name="title">タイトル</param>
+			/// <param name="author">作者名</param>
+			/// <param name="link">作品のリンク</param>
+			/// <param name="pubDate">公開日</param>
+			/// <param name="description">作品のあらすじ</param>
+			/// <param name="volume">作品の話数</param>
+			/// <param name="modifiedDate">更新日</param>
+			/// <param name="isAvailable">利用可能かどうかを表す値</param>
+			/// <param name="mediaURL">漫画の画像のURL</param>
+			/// <param name="thumbnailURL">サムネイル画像のURL</param>
+			/// <param name="id">ID</param>
+			public SpacoRSSItem(
+				 string title = default( string ), string author = default( string ), string link = default( string ), DateTime pubDate = default( DateTime ),
+				 string description = default( string ), int volume = default( int ), DateTime modifiedDate = default( DateTime ), bool isAvailable = default( bool ),
+				 string mediaURL = default( string ), string thumbnailURL = default( string ), string id = default( string ) ) {
+				Title = title;
+				Author = author;
+				Link = link;
+				PubDate = pubDate;
+				Description = description;
+				Volume = volume;
+				ModifiedDate = modifiedDate;
+				IsAvailable = isAvailable;
+				MediaURL = mediaURL;
+				ThumbnailURL = thumbnailURL;
+				ID = id;
+			}
+
+			/// <summary>
+			///		指定した<see cref="SpacoRSSItem"/>オブジェクトから、<see cref="SpacoRSSItem"/>の新しいインスタンスを生成します。
+			/// </summary>
+			/// <param name="item">各メンバーにセットする<see cref="SpacoRSSItem"/></param>
+			/// <remarks>派生クラスのコンストラクターで使用します。</remarks>
+			protected SpacoRSSItem( SpacoRSSItem item ) {
+				new SpacoRSSItem(
+					title: item.Title, author: item.Author, link: item.Link, pubDate: item.PubDate,
+					description: item.Description, volume:  item.Volume, modifiedDate: item.ModifiedDate, isAvailable: item.IsAvailable,
+					mediaURL: item.MediaURL, thumbnailURL: item.ThumbnailURL, id: item.ID
+				);
+			}
 		}
 
 		/// <summary>
@@ -150,7 +196,7 @@ namespace Chronoir_net {
 			private static XNamespace dc = @"http://purl.org/dc/elements/1.1/";
 
 			/// <summary>
-			///		SpacoRSSReaderクラスの新しいインスタンスを生成します。
+			///		<see cref="SpacoRSSReader"/>クラスの新しいインスタンスを生成します。
 			/// </summary>
 			public SpacoRSSReader() {
 				items = new List<SpacoRSSItem>();
@@ -159,10 +205,10 @@ namespace Chronoir_net {
 			#region 同期読み込み
 
 			/// <summary>
-			///		指定したURLからすぱこーRSSフィードを読み込み、SpacoRSSReaderオブジェクトを生成します。
+			///		指定したURLからすぱこーRSSフィードを読み込み、<see cref="SpacoRSSReader"/>オブジェクトを生成します。
 			/// </summary>
 			/// <param name="uri">すぱこーRSSフィードのURL</param>
-			/// <returns>すぱこーRSSフィードのデータを格納した、SpacoRSSReaderオブジェクト</returns>
+			/// <returns>すぱこーRSSフィードのデータを格納した、<see cref="SpacoRSSReader"/>オブジェクト</returns>
 			public static SpacoRSSReader Load( string uri ) {
 				SpacoRSSReader srr = new SpacoRSSReader();
 
@@ -181,19 +227,19 @@ namespace Chronoir_net {
 				// すぱこーの各話のデータを取得します。
 				var spxItems = spxChannel.Elements( "item" );
 				foreach( var item in spxItems ) {
-					SpacoRSSItem si = new SpacoRSSItem {
-						Title = item.Element( "title" ).Value,
-						Author = item.Element( dc + "creator" ).Value,
-						Link = item.Element( "link" ).Value,
-						PubDate = DateTime.Parse( item.Element( "pubDate" ).Value ),
-						Description = item.Element( "description" ).Value,
-						Volume = int.Parse( item.Element( dcndl + "volume" ).Value ),
-						ModifiedDate = DateTime.Parse( item.Element( dc + "modified" ).Value ),
-						IsAvailable = bool.Parse( item.Element( p + "isAvailable" ).Value ),
-						MediaURL = item.Element( media + "content" ).Attribute( "url" ).Value,
-						ThumbnailURL = item.Element( media + "thumbnail" ).Attribute( "url" ).Value,
-						ID = item.Element( "guid" ).Value
-					};
+					SpacoRSSItem si = new SpacoRSSItem(
+						title: item.Element( "title" ).Value,
+						author: item.Element( dc + "creator" ).Value,
+						link: item.Element( "link" ).Value,
+						pubDate: DateTime.Parse( item.Element( "pubDate" ).Value ),
+						description: item.Element( "description" ).Value,
+						volume: int.Parse( item.Element( dcndl + "volume" ).Value ),
+						modifiedDate: DateTime.Parse( item.Element( dc + "modified" ).Value ),
+						isAvailable: bool.Parse( item.Element( p + "isAvailable" ).Value ),
+						mediaURL: item.Element( media + "content" ).Attribute( "url" ).Value,
+						thumbnailURL: item.Element( media + "thumbnail" ).Attribute( "url" ).Value,
+						id: item.Element( "guid" ).Value
+					);
 					srr.items.Add( si );
 				}
 
@@ -201,10 +247,10 @@ namespace Chronoir_net {
 			}
 
 			/// <summary>
-			///		指定したXmlReaderからすぱこーRSSフィードを読み込み、SpacoRSSReaderオブジェクトを生成します。
+			///		指定したXmlReaderからすぱこーRSSフィードを読み込み、<see cref="SpacoRSSReader"/>オブジェクトを生成します。
 			/// </summary>
-			/// <param name="reader">すぱこーRSSフィードを読み込むXmlReaderオブジェクト</param>
-			/// <returns>すぱこーRSSフィードのデータを格納した、SpacoRSSReaderオブジェクト</returns>
+			/// <param name="reader">すぱこーRSSフィードを読み込む<see cref="XmlReader"/>オブジェクト</param>
+			/// <returns>すぱこーRSSフィードのデータを格納した、<see cref="SpacoRSSReader"/>オブジェクト</returns>
 			public static SpacoRSSReader Load( XmlReader reader ) {
 				SpacoRSSReader srr = new SpacoRSSReader();
 
@@ -267,9 +313,9 @@ namespace Chronoir_net {
 			/// <summary>
 			///		すぱこーの1話分のデータを取得します。
 			/// </summary>
-			/// <param name="reader">すぱこーRSSフィードを読み込むXmlReaderオブジェクト（現在位置がitem要素）</param>
-			/// <returns>すぱこー1話分のデータを格納した、SpacoRSSItemオブジェクト</returns>
-			/// <remarks>SpacoRSSReader.Load( XmlReader )から呼び出します。</remarks>
+			/// <param name="reader">すぱこーRSSフィードを読み込む<see cref="XmlReader"/>オブジェクト（現在位置がitem要素）</param>
+			/// <returns>すぱこー1話分のデータを格納した、<see cref="SpacoRSSItem"/>オブジェクト</returns>
+			/// <remarks><see cref="SpacoRSSReader.Load(XmlReader)"/>から呼び出します。</remarks>
 			/// <seealso cref="Load(XmlReader)"/>
 			private static SpacoRSSItem LoadItem( XmlReader reader ) {
 				SpacoRSSItem sri = new SpacoRSSItem();
@@ -340,7 +386,6 @@ namespace Chronoir_net {
 							default:
 								break;
 						}
-
 					}
 					// item内の要素をすべて読み終えたら、このwhile文から脱出します。
 					else if( reader.NodeType == XmlNodeType.EndElement && reader.Name == "item" ) {
@@ -353,7 +398,6 @@ namespace Chronoir_net {
 			}
 
 			#endregion
-
 		}
 	}
 }
