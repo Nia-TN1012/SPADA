@@ -152,9 +152,9 @@ namespace Chronoir_net {
 			/// <remarks>派生クラスのコンストラクターで使用します。</remarks>
 			protected SpacoRSSItem( SpacoRSSItem item ) {
 				new SpacoRSSItem(
-					title: item.Title, author: item.Author, link: item.Link, pubDate: item.PubDate,
-					description: item.Description, volume: item.Volume, modifiedDate: item.ModifiedDate, isAvailable: item.IsAvailable,
-					mediaURL: item.MediaURL, thumbnailURL: item.ThumbnailURL, id: item.ID
+					title: item?.Title, author: item?.Author, link: item?.Link, pubDate: item?.PubDate ?? default( DateTime ),
+					description: item?.Description, volume: item?.Volume ?? default( int ), modifiedDate: item?.ModifiedDate ?? default( DateTime ), isAvailable: item?.IsAvailable ?? default( bool ),
+					mediaURL: item?.MediaURL, thumbnailURL: item?.ThumbnailURL, id: item?.ID
 				);
 			}
 		}
