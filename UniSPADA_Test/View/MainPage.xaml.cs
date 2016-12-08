@@ -43,7 +43,7 @@ namespace UniSPADA_Test {
 			}
 			try {
 				// リンク先を既定のブラウザで開きます。
-				await Windows.System.Launcher.LaunchUriAsync( new Uri( rssViewModel.Items[RSSListBox.SelectedIndex].Item.Link ) );
+				await Windows.System.Launcher.LaunchUriAsync( new Uri( rssViewModel.Items[RSSListBox.SelectedIndex].Link ) );
 				//Process.Start( rssViewModel.Items[RSSListBox.SelectedIndex].Link );
 			}
 			catch {

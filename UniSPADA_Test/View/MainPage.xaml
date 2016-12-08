@@ -78,13 +78,13 @@
 							<Image Grid.Column="0" Source="{Binding Thumbnail}" Margin="5"/>
 
 							<StackPanel Grid.Column="1">
-								<TextBlock Text="{Binding Item.Title}"
+								<TextBlock Text="{Binding Title}"
 										   FontSize="{ThemeResource ListViewHeaderItemThemeFontSize}"
 										   TextWrapping="Wrap" Foreground="Lime" Padding="5,3,5,1"/>
-								<TextBlock Text="{Binding Item.Author}"
+								<TextBlock Text="{Binding Author}"
 										   FontSize="{ThemeResource ContentControlFontSize}"
 										   TextWrapping="Wrap" Foreground="White" Padding="5,1,5,3"/>
-								<TextBlock Text="{Binding Item.PubDate, Converter={StaticResource DateTimeStringConverterKey}, ConverterParameter=yyyy年MM月dd日 HH:mm:ss, ConverterLanguage=ja-JP}"
+								<TextBlock Text="{Binding PubDate, Converter={StaticResource DateTimeStringConverterKey}, ConverterParameter=yyyy年MM月dd日 HH:mm:ss, ConverterLanguage=ja-JP}"
 										   FontSize="{ThemeResource ContentControlFontSize}"
 										   TextWrapping="Wrap" Foreground="Yellow" Padding="5,1,5,2"/>
 							</StackPanel>

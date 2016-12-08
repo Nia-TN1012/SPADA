@@ -130,7 +130,12 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Chronoir_net.UniSPADA\Chronoir_net.UniSPADA.csproj">
+      <Project>{705234dc-95f7-4652-87f1-bb976dacea5c}</Project>
+      <Name>Chronoir_net.UniSPADA</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

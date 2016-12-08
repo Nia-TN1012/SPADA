@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chronoir_net.SPADA", "SPADA\Chronoir_net.SPADA.csproj", "{7BD029C4-596A-47DD-B8AE-D3B7AC905979}"
 EndProject
@@ -31,12 +31,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSPADA_Test2.WindowsPhone",
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		XSPADA_Test\XSPADA_Test\XSPADA_Test.projitems*{72fff5ec-c813-4f7b-bdab-354355f9442c}*SharedItemsImports = 13
 		XSPADA_Test2\XSPADA_Test2.Shared\XSPADA_Test2.Shared.projitems*{0b5da5ad-8d24-4ed3-b0c0-369bd838b241}*SharedItemsImports = 4
 		XSPADA_Test\XSPADA_Test\XSPADA_Test.projitems*{140737e3-020b-4642-80b4-d167020cc2a8}*SharedItemsImports = 4
-		XSPADA_Test2\XSPADA_Test2.Shared\XSPADA_Test2.Shared.projitems*{4e27a6ff-3bb0-442b-856f-807800035201}*SharedItemsImports = 4
 		XSPADA_Test\XSPADA_Test\XSPADA_Test.projitems*{33318e10-0148-47c4-b45f-6ecd5a2afc2d}*SharedItemsImports = 4
+		XSPADA_Test2\XSPADA_Test2.Shared\XSPADA_Test2.Shared.projitems*{4e27a6ff-3bb0-442b-856f-807800035201}*SharedItemsImports = 4
 		XSPADA_Test2\XSPADA_Test2.Shared\XSPADA_Test2.Shared.projitems*{5fb43763-5ff7-4415-9e56-5e8700653d8e}*SharedItemsImports = 13
+		XSPADA_Test\XSPADA_Test\XSPADA_Test.projitems*{72fff5ec-c813-4f7b-bdab-354355f9442c}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -343,6 +343,7 @@ Global
 		{70FF9299-90B3-4D6C-BE01-D3EF051735D1}.AppStore|x86.Deploy.0 = Release|x86
 		{70FF9299-90B3-4D6C-BE01-D3EF051735D1}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{70FF9299-90B3-4D6C-BE01-D3EF051735D1}.Debug|Any CPU.Build.0 = Debug|x86
+		{70FF9299-90B3-4D6C-BE01-D3EF051735D1}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{70FF9299-90B3-4D6C-BE01-D3EF051735D1}.Debug|ARM.ActiveCfg = Debug|ARM
 		{70FF9299-90B3-4D6C-BE01-D3EF051735D1}.Debug|ARM.Build.0 = Debug|ARM
 		{70FF9299-90B3-4D6C-BE01-D3EF051735D1}.Debug|ARM.Deploy.0 = Debug|ARM

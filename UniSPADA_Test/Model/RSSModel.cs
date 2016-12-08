@@ -30,9 +30,7 @@ namespace UniSPADA_Test {
 	delegate void TaskResultEventHandler( object sender, TaskResultEventArgs e );
 
 	// RSSのコンテンツです。
-	class SpacoRSSContent {
-		public SpacoRSSItem Item { get; set; }
-
+	class SpacoRSSContent : SpacoRSSItem {
 		private BitmapImage GetImage( string url ) {
 			BitmapImage bi = new BitmapImage();
 			try {
@@ -46,11 +44,14 @@ namespace UniSPADA_Test {
 
 		// サムネイル画像のキャッシュ
 		private BitmapImage thumbnail;
-		public BitmapImage Thumbnail => thumbnail ?? ( thumbnail = GetImage( Item.ThumbnailURL ) );
+		public BitmapImage Thumbnail => thumbnail ?? ( thumbnail = GetImage( ThumbnailURL ) );
 
 		// 漫画画像のキャッシュ
 		private BitmapImage media;
-		public BitmapImage Media => media ?? ( media = GetImage( Item.MediaURL ) );
+		public BitmapImage Media => media ?? ( media = GetImage( MediaURL ) );
+
+		public SpacoRSSContent( SpacoRSSItem item ) : base( item ) {
+		}
 	}
 
 	// RSSフィードの配信元情報です。
@@ -110,7 +111,7 @@ namespace UniSPADA_Test {
 						if( cancellationTokenSource.IsCancellationRequested ) {
 							throw new OperationCanceledException();
 						}
-						Items.Add( new SpacoRSSContent{ Item = item } );
+						Items.Add( new SpacoRSSContent( item ) );
 					}
 				}
 

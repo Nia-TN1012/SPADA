@@ -14,7 +14,7 @@
 *	- Xamarin.Android
 *	- Xamarin.iOS（Classicも含む）
 *	@par バージョン Version
-*	1.0.6
+*	1.0.8
 *	@par 作成者 Author
 *	智中ニア（Nia Tomonaka）
 *	@par コピーライト Copyright
@@ -33,6 +33,8 @@
 *	- https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）
 *	- https://www.nuget.org/packages/Chronoir_net.XSPADA/ （NuGet Gallery）
 *	@par リリースノート Release note
+*	- 2016/12/08 Ver. 1.0.8
+*		- CNR-00004 : コピーコンストラクターによる初期化に誤りがあったので、修正しました。
 *	- 2016/12/08 Ver. 1.0.6
 *		- CNR-00003 : SpacoRSSItemクラスのコンストラクターを強化しました。
 *	- 2016/02/14 Ver. 1.0.2
@@ -150,12 +152,12 @@ namespace Chronoir_net {
 			/// </summary>
 			/// <param name="item">各メンバーにセットする<see cref="SpacoRSSItem"/></param>
 			/// <remarks>派生クラスのコンストラクターで使用します。</remarks>
-			protected SpacoRSSItem( SpacoRSSItem item ) {
-				new SpacoRSSItem(
+			protected SpacoRSSItem( SpacoRSSItem item )
+				: this(
 					title: item?.Title, author: item?.Author, link: item?.Link, pubDate: item?.PubDate ?? default( DateTime ),
 					description: item?.Description, volume: item?.Volume ?? default( int ), modifiedDate: item?.ModifiedDate ?? default( DateTime ), isAvailable: item?.IsAvailable ?? default( bool ),
 					mediaURL: item?.MediaURL, thumbnailURL: item?.ThumbnailURL, id: item?.ID
-				);
+				) {
 			}
 		}
 
