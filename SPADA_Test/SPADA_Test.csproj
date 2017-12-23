@@ -39,10 +39,6 @@
       <HintPath>..\packages\Chronir_net.SPADA.1.0.5.25\lib\net40\Chronir_net.SPADA.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Chronoir_net.XSPADA, Version=1.0.2.54, Culture=neutral, PublicKeyToken=376e82b456766d72, processorArchitecture=MSIL">
-      <HintPath>..\packages\Chronoir_net.XSPADA.1.0.2.54\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\Chronoir_net.XSPADA.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.ServiceModel" />
@@ -110,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chronoir_net.XSPADA\Chronoir_net.XSPADA.csproj">
+      <Project>{16c50b96-bb7b-4718-9776-323cebc78c2a}</Project>
+      <Name>Chronoir_net.XSPADA</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

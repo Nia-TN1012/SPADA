@@ -5,7 +5,7 @@
         Title="すぱーダ Desktop（仮）" Height="480" Width="800">
     <Window.DataContext>
         <local:RSSViewModel x:Name="rssViewModel"
-							Url="http://pronama-api.azurewebsites.net/feed/spaco?count=20"
+							Url="https://apis.chronoir.net/spaco-feed/?count=20"
 							GetRSSCompleted="rssViewModel_GetRSSCompleted"/>
     </Window.DataContext>
 	<!-- "http://pronama-api.azurewebsites.net/feed/spaco?count=5" -->
