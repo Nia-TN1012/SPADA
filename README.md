@@ -1,16 +1,30 @@
 # すぱーダ（SPADA）
 
+## .NET Standard版のすぱーダ（すぱーダS）のリリースのお知らせ
+
+いつも、すぱーダシリーズをご利用いただきありがとうございます。  
+
+この度は、.NET Standard 2.0に対応したすぱーダ「**すぱーダS（SPADAS）**」をリリースいたしました。  
+UWPアプリはもちろんのこと、Xamarinや.NET Coreを利用したマルチプラットフォーム向けのアプリでご利用できます。
+
+* .NET Core 2.0 以上
+* .NET Framework 4.6.1 以上 (バージョンによっては、NuGetパッケージ「NETStandard.Library」が別途必要です。)
+* ユニバーサルWindowsプラットフォーム 10.0.16299 以上
+* Mono 5.4 以上
+* Xamarin.Mac 3.8以上
+* Xamarin.Android 8.0以上
+* Xamarin.iOS 10.14以上
+
 ---
 
 名称 : すぱーダ（SPADA）  
-バージョン : Ver. 1.0.5 ( Feb. 03, 2016 )  
-  
 種別 : .NET クラスライブラリ  
   
 ターゲットプラットフォーム :  
 * **すぱーダ（SPADA）** : .NET Framework 4.0  
 * **エクすぱーダ（XSPADA）** : .NET Framework 4.5、Xamarin.Android、Xamarin.iOS、Windows 8.x用ストアアプリ、Windows Phone 8.1（Silverlightには非対応）   
 * **ユニすぱーダ（UniSPADA）** : ユニバーサルWindows（Build 10240以上） 
+* **すぱーダS（SPADAS）** : .NET Standard 2.0
   
 作成者 : 智中 ニア（ [@nia_tn1012](https://twitter.com/nia_tn1012/) ）  
 ライセンス : MIT Licence  
@@ -24,36 +38,38 @@ NuGet Gallery
 * すぱーダ（SPADA）: https://www.nuget.org/packages/Chronoir_net.SPADA/ [![NuGet](https://img.shields.io/nuget/dt/Chronoir_net.SPADA.svg)](https://www.nuget.org/packages/Chronoir_net.SPADA/)
 * エクすぱーダ（XSPADA）: https://www.nuget.org/packages/Chronoir_net.XSPADA/ [![NuGet](https://img.shields.io/nuget/dt/Chronoir_net.XSPADA.svg)](https://www.nuget.org/packages/Chronoir_net.XSPADA/)
 * ユニすぱーダ（UniSPADA）: https://www.nuget.org/packages/Chronoir_net.UniSPADA/ [![NuGet](https://img.shields.io/nuget/dt/Chronoir_net.UniSPADA.svg)](https://www.nuget.org/packages/Chronoir_net.UniSPADA/)
+* すぱーダS（SPADAS）: https://www.nuget.org/packages/Chronoir_net.SPADAS/ [![NuGet](https://img.shields.io/nuget/dt/Chronoir_net.SPADAS.svg)](https://www.nuget.org/packages/Chronoir_net.SPADAS/)
 
 ---
 
-##◆ はじめに
+## ◆ はじめに
 
 ダウンロードしていただき、ありがとうございます。  
 すぱーダ（SPADA）は、プログラミング生放送のすぱこーRSSフィード
 （ http://pronama.azurewebsites.net/spaco-feed/ ）を簡単に読み込むことができるライブラリです。
 
-##◆ ダウンロードとインストール方法
+## ◆ ダウンロードとインストール方法
 
 以下のリンクからzipファイルをダウンロードし、解凍します。  
 * [Chronoir_net.SPADA.zip](http://chronoir.net/wp-content/uploads/Apps/Libraries/Chronoir_net.SPADA.zip)
+* [Chronoir_net.XSPADA.zip](http://chronoir.net/wp-content/uploads/Apps/Libraries/Chronoir_net.XSPADA.zip)
+* [Chronoir_net.UniSPADA.zip](http://chronoir.net/wp-content/uploads/Apps/Libraries/Chronoir_net.UniSPADA.zip)
+* [Chronoir_net.SPADAS.zip](http://chronoir.net/wp-content/uploads/Apps/Libraries/Chronoir_net.SPADAS.zip)
 
 DLLファイルをアセンブリ参照に追加するか、ソースファイルをプロジェクトに追加します。
 
-##◆ 使用方法
-
-ライブラリのドキュメントはこちらです -> [SPADA: Main Page](http://chronoir.net/wp-content/uploads/contents/documents/libraries/SPADA)  
+## ◆ 使用方法
 
 すぱーダは すぱこーRSSフィードを読み込む`SpacoRSSReader`クラスと
 すぱこーの各話データを格納する`SpacoRSSItem`クラスの2つで構成されています。
 
 いずれも名前空間は`Chronoir_net.SPADA`です。  
-※エクすぱーダは`Chronoir_net.XSPADA`、ユニすぱーダは`Chronoir_net.UniSPADA`です。
+※エクすぱーダは`Chronoir_net.XSPADA`、ユニすぱーダは`Chronoir_net.UniSPADA`、すぱーダSは`Chronoir_net.SPADAS`です。
 
 ```csharp
 using Chronoir_net.SPADA;
 ```
-##◆ すぱこーRSSフィードの読み込み
+## ◆ すぱこーRSSフィードの読み込み
 
 `SpacoRSSReader.Load( string )`メソッドで、
 すぱこーRSSフィードのURLを指定して読み込みます（内部でLINQ to XMLを用いています）。
@@ -96,7 +112,7 @@ using( XmlReader reader = await Task.Run( () => SpacoRSSClient.GetXmlReaderAsync
 ```
 
 
-##◆ データの取り出し
+## ◆ データの取り出し
 
 `SpacoRSSReader`オブジェクトのプロパティからデータを取り出します。
 
@@ -111,7 +127,7 @@ using( XmlReader reader = await Task.Run( () => SpacoRSSClient.GetXmlReaderAsync
 
 * Items       : 各話のデータのコレクション（ `IEnumerable<SpacoRSSItem>`型 ）
 
-##◆ 各話のデータの列挙
+## ◆ 各話のデータの列挙
 
 `SpacoRSSReader.Items`プロパティからLINQを使って、各話のデータを列挙することができます。
 
@@ -125,7 +141,7 @@ foreach( SpacoRSSItem item in srr.Items ) {
 var srr_rc2 = srr.Items.Where( _ => _.PubDate >= DateTime.Now.AddMonths( -2 ) );
 ```
 
-##◆ 各話のデータの取り出し
+## ◆ 各話のデータの取り出し
 
 `SpacoRSSItem`オブジェクトのプロパティからデータを取り出します。
 
@@ -144,7 +160,7 @@ var srr_rc2 = srr.Items.Where( _ => _.PubDate >= DateTime.Now.AddMonths( -2 ) );
 * ID           : ID
 
 
-##◆ サンプル
+## ◆ サンプル
 
 ```csharp
 using System;
@@ -190,19 +206,20 @@ class Program {
 }
 ```
 
-##◆ 免責条項
+## ◆ 免責条項
 
 このライブラリを使用しことにより生じたいかなるトラブル・損害において、
 作成者及びChronoir.netは一切の責任を負いかねます。あらかじめご了承ください。
 
 
-##◆ リリースノート
-* Ver. 1.0.5 : 2016/02/03  
-　 - エクすぱーダとユニすぱーダの動作改善
+## ◆ 変更履歴
 
-* Ver. 1.0.5 : 2016/01/30  
-　 - すぱーダの動作改善、エクすぱーダとユニすぱーダを追加
+* 2019/06/16  
+　 - すぱーダSを追加
 
-* Ver. 1.0.0 : 2015/12/27  
+* 2016/01/30  
+　 - エクすぱーダとユニすぱーダを追加
+
+* 2015/12/27  
 　 - 初版リリース
 
