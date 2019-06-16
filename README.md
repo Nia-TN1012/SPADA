@@ -21,9 +21,9 @@
 　https://github.com/Nia-TN1012/SPADA （GitHubのリポジトリ）  
   
 NuGet Gallery  
-* すぱーダ（SPADA）: https://www.nuget.org/packages/Chronir_net.SPADA/
-* エクすぱーダ（XSPADA）: https://www.nuget.org/packages/Chronoir_net.XSPADA/
-* ユニすぱーダ（UniSPADA）: https://www.nuget.org/packages/Chronoir_net.UniSPADA/ 
+* すぱーダ（SPADA）: https://www.nuget.org/packages/Chronoir_net.SPADA/ [![NuGet](https://img.shields.io/nuget/dt/Chronoir_net.SPADA.svg)](https://www.nuget.org/packages/Chronoir_net.SPADA/)
+* エクすぱーダ（XSPADA）: https://www.nuget.org/packages/Chronoir_net.XSPADA/ [![NuGet](https://img.shields.io/nuget/dt/Chronoir_net.XSPADA.svg)](https://www.nuget.org/packages/Chronoir_net.XSPADA/)
+* ユニすぱーダ（UniSPADA）: https://www.nuget.org/packages/Chronoir_net.UniSPADA/ [![NuGet](https://img.shields.io/nuget/dt/Chronoir_net.UniSPADA.svg)](https://www.nuget.org/packages/Chronoir_net.UniSPADA/)
 
 ---
 
