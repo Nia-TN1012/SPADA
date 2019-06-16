@@ -46,7 +46,7 @@ NuGet Gallery
 
 ダウンロードしていただき、ありがとうございます。  
 すぱーダ（SPADA）は、プログラミング生放送のすぱこーRSSフィード
-（ http://pronama.azurewebsites.net/spaco-feed/ ）を簡単に読み込むことができるライブラリです。
+（ https://pronama.jp/spaco-feed/ ）を簡単に読み込むことができるライブラリです。
 
 ## ◆ ダウンロードとインストール方法
 
