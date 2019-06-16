@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Nia Tomonaka</Authors>
+    <Company>Chronoir.net</Company>
+    <Description>プログラミング生放送のすぱこーRSSフィードを、簡単に読み込むことができるライブラリです。（.NET Standard 2.0）</Description>
+    <Copyright>Copyright 2014-2019 Chronoir.net</Copyright>
+    <PackageProjectUrl>https://github.com/Nia-TN1012/SPADA</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Nia-TN1012/SPADA</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>C# すぱーダ SPADA すぱこー Spaco RSS</PackageTags>
+    <PackageReleaseNotes>初版リリース</PackageReleaseNotes>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <Product>すぱーダS（SPADAS）</Product>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>CN_SPADA.pfx</AssemblyOriginatorKeyFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIconUrl>https://raw.githubusercontent.com/Nia-TN1012/SPADA/master/Chronoir_net.SPADAS/SPADAS-Pronama.png</PackageIconUrl>
+    <PackageLicenseFile>LICENCE.txt</PackageLicenseFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\Private\Project\Library\SPADA\Chronoir_net.SPADAS\Chronoir_net.SPADAS.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENCE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

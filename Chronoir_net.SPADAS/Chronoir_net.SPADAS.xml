@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Chronoir_net.SPADAS</name>
+    </assembly>
+    <members>
+        <member name="T:Chronoir_net.SPADAS.SpacoRSSReader">
+            <summary>
+            	すぱこーRSSフィードを取得するクラスです。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSReader.Title">
+            <summary>
+            	作品タイトルを取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSReader.Link">
+            <summary>
+            	リンクを取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSReader.Description">
+            <summary>
+            	作品の説明を取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSReader.PubDate">
+            <summary>
+            	最新話更新日を取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSReader.BannerURL">
+            <summary>
+            	バナー画像のURLを取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSReader.Author">
+            <summary>
+            	作者名を取得・設定します。
+            </summary>
+        </member>
+        <member name="F:Chronoir_net.SPADAS.SpacoRSSReader.items">
+            <summary>
+            	すぱこーの各話を格納します
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSReader.Items">
+            <summary>
+            	すぱこーの各話のデータコレクションを取得します。
+            </summary>
+        </member>
+        <member name="M:Chronoir_net.SPADAS.SpacoRSSReader.Load(System.String)">
+            <summary>
+            	指定したURLからすぱこーRSSフィードを読み込み、<see cref="T:Chronoir_net.SPADAS.SpacoRSSReader"/>オブジェクトを生成します。
+            </summary>
+            <param name="uri">すぱこーRSSフィードのURL</param>
+            <returns>すぱこーRSSフィードのデータを格納した、<see cref="T:Chronoir_net.SPADAS.SpacoRSSReader"/>オブジェクト</returns>
+        </member>
+        <member name="M:Chronoir_net.SPADAS.SpacoRSSReader.Load(System.Xml.XmlReader)">
+            <summary>
+            	指定した<see cref="T:System.Xml.XmlReader"/>オブジェクトからすぱこーRSSフィードを読み込み、<see cref="T:Chronoir_net.SPADAS.SpacoRSSReader"/>オブジェクトを生成します。
+            </summary>
+            <param name="reader">すぱこーRSSフィードを読み込む<see cref="T:System.Xml.XmlReader"/>オブジェクト</param>
+            <returns>すぱこーRSSフィードのデータを格納した、<see cref="T:Chronoir_net.SPADAS.SpacoRSSReader"/>オブジェクト</returns>
+        </member>
+        <member name="M:Chronoir_net.SPADAS.SpacoRSSReader.LoadItem(System.Xml.XmlReader)">
+            <summary>
+            	すぱこーの1話分のデータを取得します。
+            </summary>
+            <param name="reader">すぱこーRSSフィードを読み込む<see cref="T:System.Xml.XmlReader"/>オブジェクト（現在位置がitem要素）</param>
+            <returns>すぱこー1話分のデータを格納した、<see cref="T:Chronoir_net.SPADAS.SpacoRSSItem"/>オブジェクト</returns>
+            <remarks><see cref="M:Chronoir_net.SPADAS.SpacoRSSReader.Load(System.Xml.XmlReader)"/>から呼び出します。</remarks>
+            <seealso cref="M:Chronoir_net.SPADAS.SpacoRSSReader.Load(System.Xml.XmlReader)"/>
+        </member>
+        <member name="M:Chronoir_net.SPADAS.SpacoRSSReader.LoadAsync(System.String,System.Nullable{System.Threading.CancellationToken})">
+            <summary>
+            	指定したURLからすぱこーRSSフィードを読み込み、<see cref="T:Chronoir_net.SPADAS.SpacoRSSReader"/>オブジェクトを生成します。
+            </summary>
+            <param name="uri">すぱこーRSSフィードのURL</param>
+            <param name="cancellationToken">読み込みを中止するためのトークン</param>
+            <returns>すぱこーRSSフィードのデータを格納した、<see cref="T:Chronoir_net.SPADAS.SpacoRSSReader"/>オブジェクト</returns>
+            <exception cref="T:System.OperationCanceledException">読み込み中止を要求された時</exception>
+            <remarks><paramref name="cancellationToken"/>がnullの場合、読み込みを中止することができません。</remarks>
+        </member>
+        <member name="M:Chronoir_net.SPADAS.SpacoRSSReader.LoadAsync(System.Xml.XmlReader,System.Nullable{System.Threading.CancellationToken})">
+            <summary>
+            	指定した<see cref="T:System.Xml.XmlReader"/>からすぱこーRSSフィードを読み込み、<see cref="T:Chronoir_net.SPADAS.SpacoRSSReader"/>オブジェクトを生成します。
+            </summary>
+            <param name="reader">すぱこーRSSフィードを読み込むXmlReaderオブジェクト</param>
+            <param name="cancellationToken">読み込みを中止するためのトークン</param>
+            <returns>すぱこーRSSフィードのデータを格納した、<see cref="T:Chronoir_net.SPADAS.SpacoRSSReader"/>オブジェクト</returns>
+            <exception cref="T:System.OperationCanceledException">読み込み中止を要求された時</exception>
+            <remarks><paramref name="cancellationToken"/>がnullの場合、読み込みを中止することができません。</remarks>
+        </member>
+        <member name="M:Chronoir_net.SPADAS.SpacoRSSReader.LoadItem(System.Xml.XmlReader,System.Nullable{System.Threading.CancellationToken})">
+            <summary>
+            	すぱこーの1話分のデータを取得します。
+            </summary>
+            <param name="reader">すぱこーRSSフィードを読み込む<see cref="T:System.Xml.XmlReader"/>オブジェクト（現在位置がitem要素）</param>
+            <param name="cancellationToken">読み込みを中止するためのトークン</param>
+            <returns>すぱこー1話分のデータを格納した、<see cref="T:Chronoir_net.SPADAS.SpacoRSSItem"/>オブジェクト</returns>
+            <exception cref="T:System.OperationCanceledException">読み込み中止を要求された時</exception>
+            <remarks><see cref="M:Chronoir_net.SPADAS.SpacoRSSReader.LoadItem(System.Xml.XmlReader,System.Nullable{System.Threading.CancellationToken})"/>から呼び出します。<paramref name="cancellationToken"/>がnullの場合、読み込みを中止することができません。</remarks>
+            <seealso cref="M:Chronoir_net.SPADAS.SpacoRSSReader.LoadAsync(System.Xml.XmlReader,System.Nullable{System.Threading.CancellationToken})"/>
+        </member>
+        <member name="T:Chronoir_net.SPADAS.SpacoRSSClientHTTPException">
+            <summary>
+            	すぱこーRSSフィードを取得に失敗した時の例外クラスです。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSClientHTTPException.StatusCode">
+            <summary>
+            	HTTPステータスコードを取得します。
+            </summary>
+        </member>
+        <member name="M:Chronoir_net.SPADAS.SpacoRSSClientHTTPException.#ctor(System.String,System.Net.HttpStatusCode)">
+            <summary>
+            	エラーメッセージとステータスコードより、<see cref="T:Chronoir_net.SPADAS.SpacoRSSClientHTTPException"/>クラスの新しいインスタンスを作成します。
+            </summary>
+            <param name="message">エラーメッセージ</param>
+            <param name="statusCode">ステータスコード</param>
+        </member>
+        <member name="M:Chronoir_net.SPADAS.SpacoRSSClientHTTPException.#ctor(System.String,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            	エラーメッセージと例外、ステータスコードより、<see cref="T:Chronoir_net.SPADAS.SpacoRSSClientHTTPException"/>クラスの新しいインスタンスを作成します。
+            </summary>
+            <param name="message">エラーメッセージ</param>
+            <param name="innerException">この例外を送出する原因となった例外クラス</param>
+            <param name="statusCode">ステータスコード</param>
+        </member>
+        <member name="T:Chronoir_net.SPADAS.SpacoRSSClient">
+            <summary>
+            	WebからすぱこーRSSフィードを取得する機能を提供します。
+            </summary>
+        </member>
+        <member name="F:Chronoir_net.SPADAS.SpacoRSSClient.client">
+            <summary>
+            	HTTPクライアント
+            </summary>
+        </member>
+        <member name="M:Chronoir_net.SPADAS.SpacoRSSClient.GetXmlReaderAsync(System.String,System.Nullable{System.Threading.CancellationToken})">
+            <summary>
+            	指定したURLからXMLReaderオブジェクトを生成します。
+            </summary>
+            <param name="url">XMLのURL</param>
+            <param name="cancellationToken">処理を中止するためのトークン</param>
+            <returns>XMLを格納したXMLReaderオブジェクト</returns>
+            <exception cref="T:Chronoir_net.SPADAS.SpacoRSSClientHTTPException">XMLデータの取得に失敗した時</exception>
+            <remarks>cancellationTokenがnullの場合、処理を中止することができません。</remarks>
+        </member>
+        <member name="T:Chronoir_net.SPADAS.SpacoRSSItem">
+            <summary>
+            	すぱこーの各話のデータを表します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSItem.Title">
+            <summary>
+            	タイトルを取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSItem.Author">
+            <summary>
+            	作者名を取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSItem.Link">
+            <summary>
+            	作品のリンクを取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSItem.PubDate">
+            <summary>
+            	公開日を取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSItem.Description">
+            <summary>
+            	作品のあらすじを取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSItem.Volume">
+            <summary>
+            	作品の話数を取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSItem.ModifiedDate">
+            <summary>
+            	更新日を取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSItem.IsAvailable">
+            <summary>
+            	利用可能かどうかを取得・設定します。
+            </summary>
+            <value>true : 利用可能 / false : 利用不可能</value>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSItem.MediaURL">
+            <summary>
+            	漫画の画像のURLを取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSItem.ThumbnailURL">
+            <summary>
+            	サムネイル画像のURLを取得・設定します。
+            </summary>
+        </member>
+        <member name="P:Chronoir_net.SPADAS.SpacoRSSItem.ID">
+            <summary>
+            	IDを取得・設定します。
+            </summary>
+        </member>
+        <member name="M:Chronoir_net.SPADAS.SpacoRSSItem.#ctor(System.String,System.String,System.String,System.DateTime,System.String,System.Int32,System.DateTime,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            	指定したすぱこーRSSフィードの各要素の値から、<see cref="T:Chronoir_net.SPADAS.SpacoRSSItem"/>クラスの新しいインスタンスを生成します。
+            </summary>
+            <param name="title">タイトル</param>
+            <param name="author">作者名</param>
+            <param name="link">作品のリンク</param>
+            <param name="pubDate">公開日</param>
+            <param name="description">作品のあらすじ</param>
+            <param name="volume">作品の話数</param>
+            <param name="modifiedDate">更新日</param>
+            <param name="isAvailable">利用可能かどうかを表す値</param>
+            <param name="mediaURL">漫画の画像のURL</param>
+            <param name="thumbnailURL">サムネイル画像のURL</param>
+            <param name="id">ID</param>
+        </member>
+        <member name="M:Chronoir_net.SPADAS.SpacoRSSItem.#ctor(Chronoir_net.SPADAS.SpacoRSSItem)">
+            <summary>
+            	指定した<see cref="T:Chronoir_net.SPADAS.SpacoRSSItem"/>オブジェクトから、<see cref="T:Chronoir_net.SPADAS.SpacoRSSItem"/>の新しいインスタンスを生成します。
+            </summary>
+            <param name="item">各メンバーにセットする<see cref="T:Chronoir_net.SPADAS.SpacoRSSItem"/></param>
+            <remarks>派生クラスのコンストラクターで使用します。</remarks>
+        </member>
+    </members>
+</doc>
